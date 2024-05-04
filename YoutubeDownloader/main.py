@@ -13,3 +13,25 @@ def download_video(url, save_path):
 
     except Exception as e:
         print(e)
+
+
+def open_file_dialog():
+    folder = filedialog.askdirectory()
+    if folder:
+        print(f"Selected folder: {folder}")
+
+    return folder
+
+if __name__ == "__main__":
+    root = tk.Tk()
+    root.withdraw()
+
+    video_url = input("Enter youtube URL: ")
+    save_folder = open_file_dialog()
+
+    if save_folder:
+        print("Download started..")
+        download_video(video_url, save_folder)
+    else:
+        print("Invalid save location..")
+        
