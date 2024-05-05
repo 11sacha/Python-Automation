@@ -1,6 +1,18 @@
+import ssl
+import requests
 from pytube import YouTube
 import tkinter as tk
 from tkinter import filedialog
+# import AppKit
+
+# class AppDelegate(AppKit.NSObject):
+#     def applicationSupportsSecureRestorableState_(self, app):
+#         return True
+
+requests.packages.urllib3.disable_warnings()
+
+ssl._create_default_https_context = ssl._create_unverified_context
+
 
 def download_video(url, save_path):
     try:
@@ -23,6 +35,11 @@ def open_file_dialog():
     return folder
 
 if __name__ == "__main__":
+    # app = AppKit.NSApplication.sharedApplication()
+    # delegate = AppDelegate.alloc().init()
+    # app.setDelegate_(delegate)
+    # AppKit.NSApp().run()
+
     root = tk.Tk()
     root.withdraw()
 
