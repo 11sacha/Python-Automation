@@ -1,1 +1,1 @@
-## PDF file to audio conveerter.
+## PDF file to audio converter.
