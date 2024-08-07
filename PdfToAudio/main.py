@@ -4,9 +4,8 @@ import os
 
 # Define file paths
 FilePath = os.path.dirname(__file__)
-print(FilePath)
-AudiobooksPath = os.path.join(FilePath, 'Audios')
-PdfPath = os.path.join(FilePath, 'Files')
+AudiobooksPath = os.path.join(FilePath, r'Audios')
+PdfPath = os.path.join(FilePath, r'Files')
 
 # Create Audiobooks directory if it doesn't exist
 os.makedirs(AudiobooksPath, exist_ok=True)
@@ -32,5 +31,5 @@ for filename in os.listdir(PdfPath):
             audio_reader.setProperty('rate', 100)
             audio_reader.save_to_file(full_text, audiobook_file_path)
 
-# Run the text-to-speech engine
+# Run the converter engine
 audio_reader.runAndWait()
